@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/lambda-arithmetics)](https://www.npmjs.com/package/lambda-arithmetics)
 
-# 🍷 Need basic arithmetics, defined purely by functions?
+# 🍷  Need basic arithmetics, defined purely by functions?
 ```
 const { _true, zero, succ, eq, sub, add, mult } = require("lambda-arithmetics");
 
