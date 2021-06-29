@@ -1,23 +1,43 @@
 [![npm](https://img.shields.io/npm/v/lambda-arithmetics)](https://www.npmjs.com/package/lambda-arithmetics)
 
-# 🍷  Need basic arithmetics, defined purely by functions?
+# Arithmetics in lambda calculus
+
+
+## Boolean
+```js
+const { _true, _false, not, or, and } = require("./boolean");
+
+not(_true);
+// => _false
+
+or(_true)(_false);
+// => _true
+
+and(_false)(_true);
+// => _false
 ```
-const { _true, zero, succ, eq, sub, add, mult } = require("lambda-arithmetics");
 
-const one = succ(zero);
-const two = succ(one);
-const three = succ(two);
-const four = succ(three);
-const five = succ(four);
-const six = succ(five);
+## Numbers
+```js
+const { zero, is_zero, succ, pred } = require("./numbers");
 
-console.log(eq(sub(three)(two))(one) === _true);
-// true
+const one = succ(zero)
 
-console.log(eq(add(two)(three))(five) === _true);
-// true
+is_zero(zero);
+// => _true
 
-console.log(eq(mult(two)(three))(six) === _true);
-// true
+pred(one);
+// => zero
+```
 
+## Recursion
+
+```js
+const { zero, succ, eq, add } = require("lambda-arithmetics");
+
+const two = succ(succ(zero));
+const four = succ(succ(two));
+
+eq(add(two)(two))(four)) 
+// => _true
 ```
